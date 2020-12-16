@@ -1,0 +1,246 @@
+/* 公共样式 */
+body{margin: 0;}
+#app{
+    font-family: 'Source Han Sans' ;
+    margin-top: 0;
+}
+.w{width: 1200px;margin: 0 auto;}
+/** 基础布局  清除空隙  需在外层容器加上 dib-box，dib 可单独使用*/
+.dib-box { font-size: 0; /* 所有浏览器 */ *word-spacing: -1px; /* IE6/7 */ }
+@media (-webkit-min-device-pixel-ratio: 0) { .dib-box { letter-spacing: -5px; /* Safari 5- 等不支持 font-size: 0 的浏览器 */ } }
+.dib-box .dib {vertical-align: top;font-size: 14px;letter-spacing: normal;word-spacing: normal;line-height: inherit;}
+.dib{display: inline-block; *display: inline; *zoom: 1; }
+/*自适应两端对齐组件 外层加上 justify，内部需要两端对齐的元素都加上 dib,dib 与 justify 不要同时出现*/
+/*防止行高增大  尽量不要在父元素上设置行高*/
+.justify, .dib-box .justify { font-size: 0; line-height: inherit; }
+.justify {text-align: justify;text-justify: inter-ideograph; /* IE 6-7 */ *zoom: 1; /* IE 6-7 触发 hasLayout 使一行也能两端对齐 */-moz-text-align-last: justify;text-align-last: justify; /* IE 8+ */}
+/*** 不支持 text-align-last 的浏览器用伪元素模拟* 1. margin-left:100% 仅 WebKit 支持*/
+.justify:after { content: ""; display: inline-block; width: 100%; /* 1 */ }
+/* 子元素取消两端对齐 */
+.justify .dib {-moz-text-align-last: auto;text-align-last: auto;text-justify: auto;text-align: left;font-size: 12px;letter-spacing: normal;word-spacing: normal;}
+/* 弹性盒子 */
+.clearfix:after{content: '\0020'; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix{*zoom: 1; }
+.v-align{vertical-align: middle;}
+.fl{float: left;}
+.fr{float: right;}
+.db {display: block}
+.dib {display: inline-block}
+.fbox {display: flex;}
+.fbox-column {flex-direction: column}
+.fg1,.fg2,.fg3,.fg4,.fg5,.fg6,.fg7,.fg8,.fg9{width: 1px}
+.fg1 {flex-grow: 1}
+.fg2 {flex-grow: 2}
+.fg3 {flex-grow: 3}
+.fg4 {flex-grow: 4}
+.fg5 {flex-grow: 5}
+.fg6 {flex-grow: 6}
+.fg7 {flex-grow: 7}
+.fg8 {flex-grow: 8}
+.fg9 {flex-grow: 9}
+.fbox-ac {align-items: center;}
+.fbox-ab {align-items: baseline;}
+.fbox-wrap {flex-wrap: wrap;}
+.fbox-jc {justify-content: center;}
+.fbox-jb {justify-content: space-between;}
+.fbox-ja {justify-content: space-around;}
+.fbox-jr {justify-content: flex-end}
+.fbox-shrink{flex-shrink: 0;}
+.fbox-col{flex-direction: column;}
+.ell {overflow: hidden;word-wrap: normal;white-space: nowrap;text-overflow: ellipsis;}
+.ell_1 {overflow: hidden;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+.ell_2 {overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.ell_3 {overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+/* 重置样式 */
+
+/*对齐方式*/
+.tc {text-align: center;}
+.tl {text-align: left;}
+.tr {text-align: right;}
+.tj{text-align:justify;}
+/* 主题背景色 */
+.bg-white {background: #fff;}
+.bg-orange{background: #ff822f;}
+.bg-page{background-color: #F5F6FA;}
+/* 字体颜色 */
+.color-red {color:#C8102E !important}
+.color-white {color: #fff;}
+.color-black{color: #000;}
+.color-page{color:#7BB10A  ;}
+.color-gray{color: rgba(153, 153, 153, 1);}
+
+/* 间距*/
+.pad20 {padding: 20px;}
+.mar20 {margin: 20px;}
+.mr {margin-right: 20px;}
+.ml {margin-left: 20px;}
+.mb {margin-bottom: 20px;}
+.mt {margin-top: 20px;}
+.pt {padding-top: 20px;}
+.pb {padding-bottom: 20px;}
+.pl {padding-left: 20px;}
+.pr {padding-right: 20px;}
+/* 列表修饰 */
+.mb-list {margin-bottom: 1px}
+.mt-list {margin-top: 1px}
+.mb-bor {border-bottom: 1px solid #f5f5f5}
+.mt-bor {border-top: 1px solid #f5f5f5}
+/* 字体相关 */
+.font-s {font-size: 12px;}
+.font-m {font-size: 14px;}
+.font-l {font-size: 16px;}
+.font-xl {font-size: 18px;}
+.font-xxl {font-size: 20px;}
+.font-xxxl {font-size: 22px;}
+.font-big{font-size: 50px;}
+.font-bold {font-weight: bold;}
+.upper-text {text-transform: uppercase;}
+.delete-text {text-decoration: line-through}
+/* 清除浮动 */
+.clear{
+    overflow: hidden;
+}
+.aside .el-submenu__title:hover{
+    background: #F8E3E8 0% 0% no-repeat padding-box !important;
+  }
+  /*  */
+.select .el-input__icon{line-height: 30px;}
+.no .el-button{border:none}
+.no .el-input__inner{height: 30px;line-height: 30px;border-radius: 18px;}
+.no  .column1{padding-left:32px}
+.no  .column1 div{padding:0}
+.el-pagination.is-background .el-pager li:not(.disabled).active{background: rgba(200, 16, 46, 1);}
+.el-pagination.is-background .el-pager li:not(.disabled):hover{color:rgba(200, 16, 46, 1);}
+/* 右向左弹框 */
+.draw .el-drawer__header,.draw .el-drawer__header:focus,.draw .el-drawer__header:active,.draw span:focus{
+  outline: none;
+}
+.draw .el-drawer__header{
+  margin: 30px 30px 0 30px;padding:0 0 30px 0;
+  text-align: left;font-size: 16px;color: rgba(51, 51, 51, 1);
+  border-bottom: 1px solid #d4d4d4c4;
+}
+.draw .el-drawer__header::before{
+  content:'';
+  display: inline-block;
+  width: 4px;height: 21px;background:rgba(200, 16, 46, 1);
+  margin-right: 6px;
+}
+.draw .demo-drawer__footer{
+  border-top: 1px solid #d4d4d4c4;
+  margin: 0 30px 30px 30px;
+  padding-top:30px
+}
+.draw .conForm{
+  margin:30px
+}
+.draw .el-form-item__content{text-align:left}
+.draw .el-radio__input.is-checked+.el-radio__label{
+  color:#c8102e
+}
+.draw .el-radio__input.is-checked .el-radio__inner,.draw .el-switch.is-checked .el-switch__core{
+  background:#c8102e;
+  border-color: #c8102e;
+}
+.draw  .el-radio__inner:hover,.tables .el-checkbox__inner:hover{
+  border-color: #c8102e;
+}
+.tables .el-checkbox__input.is-checked .el-checkbox__inner,.tables .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+  background:#c8102e;
+  border-color: #c8102e;
+  }
+/*iconfont*/
+@font-face {
+    font-family: 'iconfont';  /* project id 2266038 */
+    src: url('//at.alicdn.com/t/font_2266038_8c60cwrrglw.eot');
+    src: url('//at.alicdn.com/t/font_2266038_8c60cwrrglw.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_2266038_8c60cwrrglw.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_2266038_8c60cwrrglw.woff') format('woff'),
+    url('//at.alicdn.com/t/font_2266038_8c60cwrrglw.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_2266038_8c60cwrrglw.svg#iconfont') format('svg');
+}
+
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-laba:before {
+    content: "\e698";
+  }
+  
+  .icon-shang:before {
+    content: "\e613";
+  }
+  
+  .icon-lainjie1:before {
+    content: "\e60a";
+  }
+  
+  .icon-xie1:before {
+    content: "\e60b";
+  }
+  
+  .icon-xiazai:before {
+    content: "\e60c";
+  }
+  
+  .icon-shanchu:before {
+    content: "\e60d";
+  }
+  
+  .icon-alert:before {
+    content: "\e60e";
+  }
+  
+  .icon-xuan:before {
+    content: "\e60f";
+  }
+  
+  .icon-cuowu:before {
+    content: "\e610";
+  }
+  
+  .icon-zhongji:before {
+    content: "\e611";
+  }
+  
+  .icon-gongyou:before {
+    content: "\e612";
+  }
+  
+  .icon-lainjie:before {
+    content: "\e608";
+  }
+  
+  .icon-xie:before {
+    content: "\e609";
+  }
+  
+  .icon-lock1:before {
+    content: "\e606";
+  }
+  
+  .icon-sousuo:before {
+    content: "\e607";
+  }
+  
+  .icon-xianweijing:before {
+    content: "\e68e";
+  }
+  
+  .icon-yonghu:before {
+    content: "\e603";
+  }
+  
+  .icon-logout:before {
+    content: "\e604";
+  }
+  
+  .icon-renqun:before {
+    content: "\e605";
+  }
+  

@@ -1,0 +1,6 @@
+@font-face {  
+    /* 重命名字体 */
+    font-family: 'Source Han Sans';  
+    /* 引入字体 */
+    src: url('./font-face/SourceHanSans-Normal.otf'); 
+  }
